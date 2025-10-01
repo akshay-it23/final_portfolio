@@ -39,7 +39,7 @@ export const Home = () => {
 
           <div className="flex justify-center space-x-4">
 <a
-  href="/akshay-portfolio/final_resume.pdf"
+  href={`${import.meta.env.BASE_URL}final_resume.pdf`}
   download
   className="bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-lg transition"
 >
