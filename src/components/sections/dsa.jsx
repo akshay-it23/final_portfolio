@@ -1,5 +1,5 @@
 import React from "react";
-import cardImage from "./card.png";
+import cardImage from "../../assets/card.png";
 import { RevealOnScroll } from "../RevealOnScroll";
 
 export const DSAProgress = () => {
