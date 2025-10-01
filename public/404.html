@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="refresh" content="0; url=${BASE_URL}">
+    <script>
+      // Fallback redirect for GitHub Pages SPA: redirect to base while preserving path as hash
+      (function() {
+        var base = '/ak-portfolio/';
+        var l = window.location;
+        // If already at base root, do nothing to avoid loops
+        if (l.pathname === base) return;
+        var newUrl = l.protocol + '//' + l.host + base + '#'+ l.pathname.replace(base, '') + l.search + l.hash;
+        l.replace(newUrl);
+      })();
+    </script>
+  </head>
+  <body></body>
+  </html>
+
+
