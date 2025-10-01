@@ -1,112 +1,94 @@
 import { RevealOnScroll } from "../RevealOnScroll";
+import { StonePaperScissors } from "../stone";
+import { FaReact, FaNodeJs, FaPython, FaAws } from "react-icons/fa";
+import {
+  SiMongodb,
+  SiTypescript,
+  SiTailwindcss,
+  SiGraphql,
+  SiSvelte,
+  SiVuedotjs,
+} from "react-icons/si";
+
+const Highlight = ({ children, color = "bg-yellow-300/30 text-white" }) => (
+  <span className={`px-1 rounded-md ${color}`}>{children}</span>
+);
 
 export const About = () => {
-  const frontendSkills = [
-    "React",
-    "Vue",
-    "TypeScript",
-    "TailwindCSS",
-    "Svelte",
+  const skillIcons = [
+    { icon: <FaReact className="text-blue-400 text-5xl" />, name: "React" },
+    { icon: <SiVuedotjs className="text-green-400 text-5xl" />, name: "Vue" },
+    { icon: <SiTypescript className="text-blue-500 text-5xl" />, name: "TypeScript" },
+    { icon: <SiTailwindcss className="text-cyan-400 text-5xl" />, name: "TailwindCSS" },
+    { icon: <SiSvelte className="text-orange-400 text-5xl" />, name: "Svelte" },
+    { icon: <FaNodeJs className="text-green-500 text-5xl" />, name: "Node.js" },
+    { icon: <FaPython className="text-yellow-400 text-5xl" />, name: "Python" },
+    { icon: <FaAws className="text-orange-500 text-5xl" />, name: "AWS" },
+    { icon: <SiMongodb className="text-green-500 text-5xl" />, name: "MongoDB" },
+    { icon: <SiGraphql className="text-pink-400 text-5xl" />, name: "GraphQL" },
   ];
 
-  const backendSkills = ["Node.js", "Python", "AWS", "MongoDB", "GraphQL"];
-
   return (
-    <section
-      id="about"
-      className="min-h-screen flex items-center justify-center py-20"
-    >
-      <RevealOnScroll>
-        <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
-            {" "}
-            About Me
-          </h2>
+    <section id="about" className="min-h-screen py-20 px-6 relative overflow-hidden">
+      {/* Top Section: About + Game */}
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-10">
+        {/* Left: About */}
+        <RevealOnScroll>
+          <div className="flex-1 space-y-6">
+            <h2 className="text-3xl font-bold bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
+              About Me
+            </h2>
 
-          <div className="rounded-xl p-8 border-white/10 border hover:-translate-y-1 transition-all">
-            <p className="text-gray-300 mb-6">
-              Passionate developer with expertise in building scalable web
-              applications and creating innovative solutions.
+            <p className="text-gray-300">
+              I am a passionate Full Stack Engineer with a strong focus on{" "}
+              <Highlight color="bg-blue-500/30 text-blue-200">
+                backend development
+              </Highlight>
+              , scalable systems, and real-time solutions. My journey began with
+              competitive programming in my first year and I am an efficient{" "}
+              <Highlight color="bg-green-500/30 text-green-200">
+                problem solver
+              </Highlight>{" "}
+              and a full stack developer.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
-                <h3 className="text-xl font-bold mb-4"> Frontend</h3>
-                <div className="flex flex-wrap gap-2">
-                  {frontendSkills.map((tech, key) => (
-                    <span
-                      key={key}
-                      className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 
-                                    hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition
-                    "
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
-                <h3 className="text-xl font-bold mb-4"> Backend</h3>
-                <div className="flex flex-wrap gap-2">
-                  {backendSkills.map((tech, key) => (
-                    <span
-                      key={key}
-                      className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 
-                                    hover:shadow-[0_2px_8px_rgba(59,130,2246,0.2)] transition
-                    "
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
+            {/* Skills small list */}
+            <div className="flex flex-wrap gap-4 mt-2">
+              {skillIcons.map((skill, idx) => (
+                <span key={idx} className="text-gray-300 text-sm bg-white/10 px-2 py-1 rounded">
+                  {skill.name}
+                </span>
+              ))}
             </div>
           </div>
+        </RevealOnScroll>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-            <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
-              <h3 className="text-xl font-bold mb-4"> 🏫 Education </h3>
-              <ul className="list-disc list-inside text-gray-300 space-y-2">
-                <li>
-                  <strong> B.S. in Computer Science </strong> - XYZ University
-                  (2016-2020)
-                </li>
-                <li>
-                  Relevant Coursework: Data Structures, Web Development, Cloud
-                  Computing...
-                </li>
-              </ul>
-            </div>
-            <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
-              <h3 className="text-xl font-bold mb-4"> 💼 Work Experience </h3>
-              <div className="space-y-4 text-gray-300">
-                <div>
-                  <h4 className="font-semibold">
-                    {" "}
-                    Software Engineer at ABC Corp (2020 - Present){" "}
-                  </h4>
-                  <p>
-                    Developed and maintained microservices for cloud-based
-                    applications.
-                  </p>
-                </div>
-
-                <div>
-                  <h4 className="font-semibold">
-                    {" "}
-                    Intern at DEF Startups (2019){" "}
-                  </h4>
-                  <p>
-                    Assisted in building front-end components and integration
-                    REST APIs
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+        {/* Right: Stone Paper Scissors Game */}
+        <div className="flex-1 flex justify-center items-center">
+          <StonePaperScissors />
         </div>
-      </RevealOnScroll>
+      </div>
+<br/>
+<br/>
+<br/>
+<br/>
+    
+      {/* Scrolling Icons */}
+      <div className="absolute bottom-40 w-full overflow-hidden">
+        <div className="flex animate-scroll w-[200%]">
+          {[...skillIcons, ...skillIcons].map((skill, idx) => (
+            <div key={idx} className="flex items-center justify-center mx-8">
+              {skill.icon}
+            </div>
+          ))}
+        </div>
+      </div>
+<br/>
+<br/>
+<br/>
     </section>
+
+
+
   );
 };

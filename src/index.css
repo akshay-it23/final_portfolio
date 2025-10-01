@@ -48,3 +48,84 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 20s linear infinite;
+}
+@keyframes rise {
+  0% {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-8px);
+    opacity: 0;
+  }
+}
+
+.rising-arrow {
+  animation: rise 1.2s ease-in-out infinite;
+}
+/* src/app.css or Education.css */
+
+/* Container for Education section */
+.education-section {
+  padding: 2.5rem 2rem; /* more padding */
+  background-color: #0f0f0f; /* dark professional background */
+  border-radius: 1rem;
+  border: 1px solid #333;
+  max-width: 800px;
+  margin: 2rem auto; /* center in page */
+  box-shadow: 0 6px 25px rgba(0,0,0,0.6);
+}
+
+/* List container */
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* more space between items */
+}
+
+/* Each education item */
+.education-item h3 {
+  font-size: 1.8rem; /* larger degree/title */
+  color: #00bfff; /* highlight degree or title */
+  font-weight: 700;
+}
+
+.education-item p {
+  font-size: 1.2rem; /* larger description */
+  margin: 0.3rem 0;
+  color: #e0e0e0;
+}
+
+.education-item span {
+  font-size: 1rem; /* larger year/location */
+  color: #999; /* subtle color for location / year */
+}
+
+/* Optional: Add a line separator between items */
+.education-item:not(:last-child) {
+  border-bottom: 1px solid #333;
+  padding-bottom: 1.2rem;
+}

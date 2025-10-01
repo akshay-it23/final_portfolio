@@ -8,7 +8,8 @@ import { About } from "./components/sections/About";
 import { Projects } from "./components/sections/Projects";
 import "./index.css";
 import { Contact } from "./components/sections/Contact";
-
+import Education from "./components/sections/eduction";
+import { DSAProgress } from "./components/sections/dsa";
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -25,6 +26,8 @@ function App() {
         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <Home />
         <About />
+        <Education/>
+        <DSAProgress/>
         <Projects />
         <Contact />
       </div>
