@@ -1,5 +1,5 @@
 import { RevealOnScroll } from "../RevealOnScroll";
-import akshayphoto from '../../assets/akshayphoto.jpg';
+import akshayphoto from "../../assets/akshayphoto.jpg";
 import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
 
 export const Home = () => {
