@@ -39,8 +39,8 @@ export const Contact = () => {
             Let’s Connect
           </h2>
           <p className="text-gray-400 text-center mb-8">
-         I'm currently available for freelance work or full-time postions.<br/>
-         Drop me  a line if you'd like to work together!
+            I'm currently available for freelance work or full-time postions.<br />
+            Drop me  a line if you'd like to work together!
           </p>
 
           <form className="space-y-6" onSubmit={handleSubmit}>
@@ -67,7 +67,7 @@ export const Contact = () => {
                 required
                 value={formData.email}
                 className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
-                placeholder="your@email.com"
+                placeholder="sainiakshay2020@gmail.com"
                 onChange={(e) =>
                   setFormData({ ...formData, email: e.target.value })
                 }
@@ -108,8 +108,8 @@ export const Contact = () => {
           </div>
         </div>
         <div className="text-center mt-4 text-sm text-gray-500">
-  © {new Date().getFullYear()} All Rights Reserved
-</div>
+          © {new Date().getFullYear()} All Rights Reserved
+        </div>
       </RevealOnScroll>
     </section>
   );
